@@ -1,0 +1,18 @@
+/* FoodDisplay Container */
+.food-display {
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+.food-display h2 {
+    font-size: max(2vw, 24px);
+    font-weight: 600;
+}
+
+/* Responsive Grid */
+.food-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px 20px;
+    margin-top: 30px;
+}
