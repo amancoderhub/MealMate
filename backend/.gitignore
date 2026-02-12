@@ -7,13 +7,42 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Runtime
+# Runtime / dependencies
 node_modules
 dist
 dist-ssr
+build
 *.local
 
 # Environment variables (IMPORTANT)
 .env
 .env.*
 !.env.example
+
+# Uploads / temp
+uploads/
+tmp/
+temp/
+
+# Cache / coverage
+.cache/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Misc
+*.zip
+*.tar
+*.gz
