@@ -1,0 +1,131 @@
+.my-orders {
+    margin: 50px 0px;
+}
+
+.my-orders .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.my-orders-order {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1fr 1fr 3fr 1fr;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+    padding: 15px 25px;
+    color: #454545;
+    border: 1px solid #ededed;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.status-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.status-text {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.status-text span {
+    color: tomato;
+    margin-right: 5px;
+}
+
+.status-text b {
+    color: #454545;
+    font-weight: 500;
+}
+
+.timeline-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    color: #9b9b9b;
+}
+
+.status-step.active {
+    color: tomato;
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #e2e2e2;
+    border-radius: 50%;
+}
+
+.status-step.active .status-dot {
+    background-color: tomato;
+}
+
+.status-line {
+    flex: 1;
+    height: 2px;
+    background-color: #e2e2e2;
+    margin: 0px 5px;
+    margin-bottom: 20px;
+}
+
+.status-line.active {
+    background-color: tomato;
+}
+
+.status-step p {
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.my-orders-order:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.my-orders-order img {
+    width: 50px;
+}
+
+.my-orders-order button {
+    border: none;
+    padding: 12px 0px;
+    border-radius: 4px;
+    background-color: #ffe1e1;
+    cursor: pointer;
+    color: #454545;
+    transition: 0.3s;
+}
+
+.my-orders-order button:hover {
+    background-color: #ffd1d1;
+}
+
+@media (max-width:900px) {
+    .my-orders-order {
+        grid-template-columns: 1fr 2fr 1fr;
+        row-gap: 5px;
+        font-size: 12px;
+    }
+
+    .my-orders-order button {
+        font-size: 10px;
+    }
+}

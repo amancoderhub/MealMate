@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+:root {
+  --primary-color: #ff4c24;
+  --secondary-color: #2d3436;
+  --bg-color: #ffffff;
+  --text-dark: #2d3436;
+  --text-light: #6d6d6d;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --shadow-sm: 0px 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 10px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0px 20px 25px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:Outfit;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   scroll-behavior: smooth;
 }
 body{
