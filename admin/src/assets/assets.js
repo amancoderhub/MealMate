@@ -14,6 +14,5 @@ export const assets ={
     parcel_icon
 }
 
-<<<<<<< HEAD
 export const url = 'https://mealmate-ybjb.onrender.com'
 
