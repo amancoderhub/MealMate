@@ -3,19 +3,19 @@
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
     align-items: start;
     gap: 30px;
-    border: 1px solid #ededed;
+    border: 1px solid var(--border-color);
     padding: 20px;
     margin: 30px 0px;
     font-size: 14px;
-    color: #454545;
-    background-color: #ffffff;
+    color: var(--text-dark);
+    background-color: var(--card-bg);
     border-radius: 4px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
 .order-item:hover {
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
 }
 
@@ -36,7 +36,9 @@
 
 .order-search {
     padding: 8px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-dark);
     border-radius: 4px;
     width: 250px;
     font-size: 14px;
@@ -44,7 +46,7 @@
 }
 
 .order-search:focus {
-    border-color: tomato;
+    border-color: var(--primary-color);
 }
 
 .order-item-phone {
@@ -52,8 +54,9 @@
 }
 
 .order-item select {
-    background-color: #ffe1e1;
-    border: 1px solid tomato;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--primary-color);
+    color: var(--text-dark);
     width: max(10vw, 120px);
     padding: 10px;
     outline: none;

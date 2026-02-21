@@ -16,11 +16,11 @@
     gap: 30px;
     font-size: 14px;
     padding: 15px 25px;
-    color: #454545;
-    border: 1px solid #ededed;
-    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
     border-radius: 4px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
     transition: 0.3s;
 }
 
@@ -38,12 +38,12 @@
 }
 
 .status-text span {
-    color: tomato;
+    color: var(--primary-color);
     margin-right: 5px;
 }
 
 .status-text b {
-    color: #454545;
+    color: var(--text-dark);
     font-weight: 500;
 }
 
@@ -60,35 +60,35 @@
     align-items: center;
     gap: 5px;
     position: relative;
-    color: #9b9b9b;
+    color: var(--text-light);
 }
 
 .status-step.active {
-    color: tomato;
+    color: var(--primary-color);
     font-weight: 500;
 }
 
 .status-dot {
     width: 12px;
     height: 12px;
-    background-color: #e2e2e2;
+    background-color: var(--border-color);
     border-radius: 50%;
 }
 
 .status-step.active .status-dot {
-    background-color: tomato;
+    background-color: var(--primary-color);
 }
 
 .status-line {
     flex: 1;
     height: 2px;
-    background-color: #e2e2e2;
+    background-color: var(--border-color);
     margin: 0px 5px;
     margin-bottom: 20px;
 }
 
 .status-line.active {
-    background-color: tomato;
+    background-color: var(--primary-color);
 }
 
 .status-step p {
@@ -97,7 +97,7 @@
 }
 
 .my-orders-order:hover {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
 }
 
 .my-orders-order img {
@@ -108,14 +108,16 @@
     border: none;
     padding: 12px 0px;
     border-radius: 4px;
-    background-color: #ffe1e1;
+    background-color: var(--glass-bg);
+    border: 1px solid var(--primary-color);
     cursor: pointer;
-    color: #454545;
+    color: var(--text-dark);
     transition: 0.3s;
 }
 
 .my-orders-order button:hover {
-    background-color: #ffd1d1;
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 @media (max-width:900px) {

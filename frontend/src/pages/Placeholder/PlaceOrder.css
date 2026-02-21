@@ -15,22 +15,24 @@
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 50px;
+    color: var(--text-dark);
 }
 
 .place-order-left input{
     margin-bottom: 15px;
     width: 100%;
     padding: 12px;
-    border: 1px solid #e2e2e2;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
-    outline-color: tomato;
-    background-color: #fafafa;
+    outline-color: var(--primary-color);
+    background-color: var(--card-bg);
+    color: var(--text-dark);
     transition: 0.3s;
 }
 
 .place-order-left input:focus {
-    background-color: #ffffff;
-    box-shadow: 0px 0px 5px rgba(255, 99, 71, 0.2);
+    background-color: var(--glass-bg);
+    box-shadow: 0px 0px 5px rgba(255, 76, 36, 0.2);
 }
 .place-order-left .multi-fields{
     display: flex;
@@ -38,7 +40,7 @@
 }
 .place-order-right{
     width: 100%;
-    max-width: max(40%,500px);
+    max-width: max(40%, 500px);
 }
 .place-order .cart-total button{
     margin-top: 30px;
@@ -53,6 +55,7 @@
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 30px;
+    color: var(--text-dark);
 }
 
 .payment-option {
@@ -60,31 +63,33 @@
     align-items: center;
     gap: 15px;
     padding: 10px 20px;
-    border: 1px solid #e2e2e2;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     margin-bottom: 15px;
     cursor: pointer;
     transition: 0.3s;
+    background-color: var(--card-bg);
 }
 
 .payment-option:hover {
-    background-color: #fafafa;
+    background-color: var(--glass-bg);
 }
 
 .payment-option.active {
-    border-color: tomato;
+    border-color: var(--primary-color);
+    background-color: var(--glass-bg);
 }
 
 .radio-circle {
     width: 20px;
     height: 20px;
-    border: 2px solid #ccc;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
     position: relative;
 }
 
 .payment-option.active .radio-circle {
-    border-color: tomato;
+    border-color: var(--primary-color);
 }
 
 .payment-option.active .radio-circle::after {
@@ -92,7 +97,7 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: tomato;
+    background-color: var(--primary-color);
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -101,14 +106,14 @@
 
 .payment-option p {
     font-size: 15px;
-    color: #444;
+    color: var(--text-dark);
 }
 
 .payment-method button {
     margin-top: 30px;
     width: 100%;
     padding: 12px;
-    background-color: tomato;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 6px;

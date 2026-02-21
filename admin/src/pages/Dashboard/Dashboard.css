@@ -16,15 +16,15 @@
 
 .stat-card {
     flex: 1;
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 20px;
-    border: 1px solid #ededed;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
 }
 
 .stat-card p {
-    color: #6d6d6d;
+    color: var(--text-light);
     font-size: 14px;
     margin-bottom: 5px;
 }
@@ -32,12 +32,12 @@
 .stat-card h3 {
     font-size: 24px;
     font-weight: 700;
-    color: tomato;
+    color: var(--primary-color);
 }
 
 .dashboard-recent {
-    background-color: white;
-    border: 1px solid #ededed;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 20px;
 }
@@ -50,12 +50,13 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     padding: 12px 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
     font-size: 14px;
+    color: var(--text-dark);
 }
 
 .recent-header {
-    background-color: #f9f9f9;
+    background-color: var(--glass-bg);
     font-weight: 600;
 }
 
@@ -70,6 +71,10 @@
 .status-pill.food-processing { background: #fff9e6; color: #856404; }
 .status-pill.out-for-delivery { background: #e6f3ff; color: #004085; }
 .status-pill.delivered { background: #e6ffed; color: #155724; }
+
+[data-theme='dark'] .status-pill.food-processing { background: #332b00; color: #ffeb3b; }
+[data-theme='dark'] .status-pill.out-for-delivery { background: #002244; color: #64b5f6; }
+[data-theme='dark'] .status-pill.delivered { background: #003311; color: #81c784; }
 
 @media (max-width: 800px) {
     .dashboard-stats {

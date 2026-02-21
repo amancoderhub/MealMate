@@ -114,6 +114,11 @@ Your home page now builds instant trust and drives growth!
 - **Micro-Interactions**: The "Add" icon rotates and scales dynamically on hover, providing tactile feedback. ✨
 - **Smooth Entry**: Items slide and fade into view during page load, creating a "live" feel. 🌊
 
+### 🌙 Dark / Light Mode
+- **Universal Toggle**: Stylish switcher in both Frontend and Admin Navbar.
+- **Auto-Persistence**: Remembers your theme preference across the entire ecosystem.
+- **Admin Dashboard Theming**: Optimized charts, tables, and status pills for night-time management. 🌒📊
+
 ---
 
 ## 🛠️ Implementation & Architecture

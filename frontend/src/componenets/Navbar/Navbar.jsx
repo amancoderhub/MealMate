@@ -10,6 +10,19 @@ const Navbar = ({ setShowLogin }) => {
     const { getTotalCartAmount, token, setToken, search, setSearch } = useContext(StoreContext);
 
     const [showSearch, setShowSearch] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+    const toggleTheme = () => {
+        const newTheme = theme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+        document.documentElement.setAttribute("data-theme", newTheme);
+    }
+
+    // Initialize theme on load
+    React.useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+    }, []);
 
     const navigate = useNavigate();
 
@@ -37,6 +50,11 @@ const Navbar = ({ setShowLogin }) => {
                         value={search} 
                         onChange={(e) => setSearch(e.target.value)}
                     />
+                </div>
+                <div className="navbar-theme-toggle" onClick={toggleTheme}>
+                    <div className={`toggle-btn ${theme === 'dark' ? 'active' : ''}`}>
+                        <span className="icon">{theme === 'dark' ? '🌙' : '☀️'}</span>
+                    </div>
                 </div>
                 <div className="navbar-search-icon">
                     <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
