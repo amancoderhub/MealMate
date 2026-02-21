@@ -26,6 +26,8 @@ const PlaceOrder = () => {
         setData(data => ({ ...data, [name]: value }))
     }
 
+    const [payment, setPayment] = useState("COD");
+
     const navigate = useNavigate();
 
     const placeOrder = async (event) => {
@@ -42,11 +44,17 @@ const PlaceOrder = () => {
             address: data,
             items: orderItems,
             amount: getTotalCartAmount() + 2,
+            paymentMethod: payment
         }
         let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
         if (response.data.success) {
-            const { session_url } = response.data;
-            window.location.replace(session_url);
+            if (payment === 'Stripe') {
+                const { session_url } = response.data;
+                window.location.replace(session_url);
+            } else {
+                navigate('/myorders');
+                alert("Order Placed Successfully via COD!");
+            }
         }
         else {
             if (response.data.message.includes("jwt malformed")) {
@@ -105,7 +113,19 @@ const PlaceOrder = () => {
                             <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
                         </div>
                     </div>
-                    <button type='submit'>PROCEED TO PAYMENT</button>
+                </div>
+
+                <div className="payment-method">
+                    <h2>Payment Method</h2>
+                    <div onClick={() => setPayment("COD")} className={`payment-option ${payment === "COD" ? "active" : ""}`}>
+                        <div className="radio-circle"></div>
+                        <p>COD ( Cash on delivery )</p>
+                    </div>
+                    <div onClick={() => setPayment("Stripe")} className={`payment-option ${payment === "Stripe" ? "active" : ""}`}>
+                        <div className="radio-circle"></div>
+                        <p>Stripe ( Credit / Debit )</p>
+                    </div>
+                    <button type='submit'>Place Order</button>
                 </div>
             </div>
         </form>

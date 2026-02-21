@@ -7,6 +7,8 @@ import { assets } from '../../assets/assets'
 const Orders = ({ url }) => {
 
   const [orders, setOrders] = useState([]);
+  const [filter, setFilter] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fetchAllOrders = async () => {
     const response = await axios.get(url + "/api/order/list");
@@ -32,11 +34,33 @@ const Orders = ({ url }) => {
     fetchAllOrders();
   }, [])
 
+  const filteredOrders = orders.filter(order => {
+    const matchesStatus = filter === "All" || order.status === filter;
+    const matchesSearch = (order.address.firstName + " " + order.address.lastName).toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          order.address.phone.includes(searchTerm);
+    return matchesStatus && matchesSearch;
+  })
+
   return (
     <div className='order add'>
-      <h3>Order Page</h3>
+      <div className="order-header">
+        <h3>Order Page</h3>
+        <input 
+          type="text" 
+          placeholder="Search by name or phone..." 
+          className="order-search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <div className="order-filters">
+          <button onClick={() => setFilter("All")} className={filter === "All" ? "active" : ""}>All ({orders.length})</button>
+          <button onClick={() => setFilter("Food Processing")} className={filter === "Food Processing" ? "active" : ""}>Processing ({orders.filter(o => o.status === "Food Processing").length})</button>
+          <button onClick={() => setFilter("Out for delivery")} className={filter === "Out for delivery" ? "active" : ""}>Out for delivery ({orders.filter(o => o.status === "Out for delivery").length})</button>
+          <button onClick={() => setFilter("Delivered")} className={filter === "Delivered" ? "active" : ""}>Delivered ({orders.filter(o => o.status === "Delivered").length})</button>
+        </div>
+      </div>
       <div className="order-list">
-        {orders.map((order, index) => (
+        {filteredOrders.map((order, index) => (
           <div key={index} className='order-item'>
             <img src={assets.parcel_icon} alt="" />
             <div>
@@ -59,7 +83,7 @@ const Orders = ({ url }) => {
             </div>
             <p>Items : {order.items.reduce((acc, item) => acc + item.quantity, 0)}</p>
             <p>${order.amount}</p>
-            <select onChange={(event) => statusHandler(event, order._id)} value={order.status}>
+            <select onChange={(event) => statusHandler(event, order._id)} value={order.status} className={order.status.replace(/\s+/g, '-').toLowerCase()}>
               <option value="Food Processing">Food Processing</option>
               <option value="Out for delivery">Out for delivery</option>
               <option value="Delivered">Delivered</option>

@@ -29,6 +29,24 @@
     margin-bottom: 5px;
 }
 
+.order-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.order-search {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    font-size: 14px;
+    outline: none;
+}
+
+.order-search:focus {
+    border-color: tomato;
+}
+
 .order-item-phone {
     line-height: 1.2;
 }

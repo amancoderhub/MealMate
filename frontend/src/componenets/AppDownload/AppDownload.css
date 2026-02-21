@@ -21,3 +21,31 @@
 .app-download-platforms img:hover{
     transform: scale(1.05);
 }
+
+.app-download-stats {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 60px;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.stat-item h3 {
+    color: var(--primary-color);
+    font-size: max(2.5vw, 30px);
+    font-weight: 700;
+}
+
+.stat-item p {
+    color: #6d6d6d;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+@media (max-width: 750px) {
+    .app-download-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

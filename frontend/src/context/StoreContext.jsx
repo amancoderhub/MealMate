@@ -2,6 +2,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import { food_list as assets_food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
@@ -9,7 +10,7 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const url = "http://localhost:4000"
     const [token, setToken] = useState("");
-    const [food_list, setFoodList] = useState([]);
+    const [food_list, setFoodList] = useState(assets_food_list);
     const [search, setSearch] = useState("");
 
     const addToCart = async (itemId) => {
@@ -43,7 +44,7 @@ const StoreContextProvider = (props) => {
 
     const fetchFoodList = async () => {
         const response = await axios.get(url + "/api/food/list");
-        setFoodList(response.data.data);
+        setFoodList([...assets_food_list, ...response.data.data]);
     }
 
     const loadCartData = async (token) => {
