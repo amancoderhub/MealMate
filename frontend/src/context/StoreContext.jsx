@@ -44,7 +44,20 @@ const StoreContextProvider = (props) => {
 
     const fetchFoodList = async () => {
         const response = await axios.get(url + "/api/food/list");
-        setFoodList([...assets_food_list, ...response.data.data]);
+        if (response.data.success) {
+            const backendData = response.data.data;
+            const combinedList = [...assets_food_list];
+            backendData.forEach(item => {
+                const isDuplicate = combinedList.some(local => 
+                    local.name.trim().toLowerCase() === item.name.trim().toLowerCase()
+                );
+                if (!isDuplicate) {
+                    combinedList.push(item);
+                }
+            });
+            
+            setFoodList(combinedList);
+        }
     }
 
     const loadCartData = async (token) => {
