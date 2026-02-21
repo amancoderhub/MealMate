@@ -16,6 +16,4 @@ export const assets ={
 
 <<<<<<< HEAD
 export const url = 'https://mealmate-ybjb.onrender.com'
-=======
-export const url = 'https://mealmate-ybjb.onrender.com'
->>>>>>> be5d7339cc12156a89548bb060ba2138378b4c5d
+
