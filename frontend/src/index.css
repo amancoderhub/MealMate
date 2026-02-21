@@ -6,9 +6,9 @@
   --bg-color: #ffffff;
   --text-dark: #2d3436;
   --text-light: #6d6d6d;
-  --glass-bg: rgba(255, 255, 255, 0.95);
-  --card-bg: #fdfdfd;
-  --border-color: #ddd;
+  --glass-bg: rgba(245, 245, 245, 0.95);
+  --card-bg: #ffffff;
+  --border-color: #bbb;
   --shadow-sm: 0px 4px 6px rgba(0, 0, 0, 0.05);
   --shadow-md: 0px 10px 15px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0px 20px 25px rgba(0, 0, 0, 0.1);
