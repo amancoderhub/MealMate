@@ -47,8 +47,11 @@ const StoreContextProvider = (props) => {
         if (response.data.success) {
             const backendData = response.data.data;
             const combinedList = [...assets_food_list];
+<<<<<<< HEAD
             
             // Add backend items only if they don't exist in local assets (deduplicate by name)
+=======
+>>>>>>> d0ef9d7acae38e52be1bf2614ab5c3a811887abf
             backendData.forEach(item => {
                 const isDuplicate = combinedList.some(local => 
                     local.name.trim().toLowerCase() === item.name.trim().toLowerCase()

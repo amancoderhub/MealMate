@@ -8,6 +8,9 @@
 
 **MealMate** is a high-performance, full-stack MERN application designed for the modern food delivery business. It features a stunning user-facing frontend, a powerful admin dashboards for sales analytics, and a robust backend integrated with Stripe for secure payments.
 
+#Deploy Link : Admin - https://mealmate-admin-97sa.onrender.com
+              User -  https://mealmate-frontend-yfr5.onrender.com
+
 ---
 
 ## 💎 Premium Features
